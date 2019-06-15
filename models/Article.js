@@ -7,15 +7,11 @@ var ArticleSchema = new Schema({
   title: {
     type: String,
     required: true
-    // unique: true,
-    // dropsDups: true
   },
   // `link` is required and of type String
   link: {
     type: String,
     required: true
-    // unique: true,
-    // dropsDups: true
   },
   excerpt: {
     type: String

@@ -36,7 +36,8 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local MITHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/MITHeadlines"; { useNewUrlParser: true }
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/MITHeadlines"; 
+// { useNewUrlParser: true }
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
@@ -77,7 +78,7 @@ app.get("/scrape", function(req, res) {
       result.title = $(element).children("a").text();
       found = titleArr.includes(result.title);
       result.link = $(element).children("a").attr("href");
-      result.excerpt = $(element).parent().children(".td-excerpt").text().trim();
+      result.excerpt = $(element).parent().children(".description").text().trim();
       if (!found && result.title && result.link){
         results.push(result);
      }
