@@ -47,12 +47,12 @@ $(document).on("click", ".note-comment", function() {
   window.location.replace("/articles/" + thisId);
 });
 
-  // Submit a note
+  // Submit a comment
   $(document).on("click", "#submit-note", function() {
     // Grab the id associated with the article from the submit button
     var thisId = $(this).attr("data-id");
-      // Run a POST request to save the note
-    $.ajax({
+      // Run a POST request to save the comment
+      $.ajax({
       method: "POST",
       url: "/articles/" + thisId,
       data: {
